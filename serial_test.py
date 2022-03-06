@@ -1,7 +1,7 @@
 #Refrenenced https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
 
 #!/usr/bin/env python3
-from pyserial import serial
+from serial import serial
 import time
 
 if __name__ == '__main__':
