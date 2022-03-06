@@ -58,15 +58,15 @@ void setup(){
 
 void loop() 
 {
-    driveMotor(200,1)
+    driveMotor(200,1);
     Serial.println("half speed");
     delay(2000);
     
-    driveMotor(100,1)
+    driveMotor(100,1);
     Serial.println("three fourths speed");
     delay(2000);
     
-    driveMotor(400,1)
+    driveMotor(400,1);
     Serial.println("Stopped");
     delay(5000);
     
