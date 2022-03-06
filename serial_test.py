@@ -8,7 +8,7 @@ if __name__ == '__main__':
     ser = serial.Serial('/dev/ttyUSB0', 112500, timeout=1)
     ser.reset_input_buffer()
     
-    """
+    
     #Basic reading serial data from arduino and printing it
 
     while True:
@@ -25,5 +25,6 @@ if __name__ == '__main__':
         print(line)
         time.sleep(1)
 
+    """
 
             
