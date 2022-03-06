@@ -1,11 +1,11 @@
 #Refrenenced https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
 
 #!/usr/bin/env python3
-import serial
+import serial_test
 import time
 
 if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+    ser = serial_test.Serial('/dev/ttyUSB0', 9600, timeout=1)
     ser.reset_input_buffer()
     
     """
