@@ -35,17 +35,38 @@ void setup(){
 }
 void loop() 
 {
-    digitalWrite(nidecBrake,HIGH);
-    digitalWrite(ledsBrake,LOW);
-    digitalWrite(nidecDirection,LOW);
-    digitalWrite(ledsDirection,LOW);
-    analogWrite(nidecPWM, 200);
-    delay(2000);
+    driveMotor(200,1)
     Serial.println("half speed");
-    analogWrite(nidecPWM, 100);
     delay(2000);
+    
+    driveMotor(100,1)
     Serial.println("three fourths speed");
-    analogWrite(nidecPWM, 400);
-    delay(4000);
+    delay(2000);
+    
+    driveMotor(400,1)
     Serial.println("Stopped");
+    delay(5000);
+    
 }
+
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  Drive Motor Function START $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+// For pwm: 400 = stopped and 0 = full speed
+// For dir: 0 = CCW and 1 = CW
+void driveMotor(float pwm,int dir){
+  //if pwm 
+  digitalWrite(nidecBrake,HIGH);    // Nidec motor brake OFF
+  digitalWrite(ledsBrake,LOW);      //Red LED OFF // Brake OFF
+  if(dir == 0){
+    analogWrite(nidecPWM, pwm);
+    digitalWrite(nidecDirection,LOW); // Nidec Direction CCW
+    digitalWrite(ledsDirection,LOW);  //Green LED OFF // Direction CCW
+    }
+  else if(dir == 1){
+    analogWrite(nidecPWM, pwm);
+    digitalWrite(nidecDirection,HIGH); // Nidec Direction CW
+    digitalWrite(ledsDirection,HIGH);  //Green LED ON // Direction CW
+    } 
+}
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  Drive Motor Function END $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
