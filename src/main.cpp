@@ -33,6 +33,7 @@ void setup(){
     Serial.println("Welcome! Beginning transmission");
     pinMode(LED_BUILTIN,OUTPUT);
 }
+
 void loop() 
 {
     driveMotor(200,1)
@@ -53,7 +54,7 @@ void loop()
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  Drive Motor Function START $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 // For pwm: 400 = stopped and 0 = full speed
 // For dir: 0 = CCW and 1 = CW
-void driveMotor(float pwm,int dir){
+void driveMotor(int pwm,int dir){
   //if pwm 
   digitalWrite(nidecBrake,HIGH);    // Nidec motor brake OFF
   digitalWrite(ledsBrake,LOW);      //Red LED OFF // Brake OFF
