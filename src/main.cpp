@@ -1,4 +1,4 @@
-
+#include "Arduino.h"
 #include <Wire.h>
 #include <Kalman.h> // Source: https://github.com/TKJElectronics/KalmanFilter
 
