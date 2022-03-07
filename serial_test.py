@@ -17,13 +17,19 @@ if __name__ == '__main__':
             xangle = ser.readline().decode("utf-8").rstrip()
             print(f"X Angle = {xangle}")
             pwm = int(float(xangle))
-            str_pwm = str(pwm)
-            print(f"X PWM = {pwm}")
-            writevar = struct.pack('i', pwm)
-            ser.write(writevar)
-        
-    """
+            
 
+            test_line = ser.readline().decode("utf-8").rstrip()
+            if test_line != xangle:
+                print(f"Recived PWM = {test_line}")
+                
+            pid_out = xangle*2
+            print(f"X PWM = {pid_out}")
+            writevar = struct.pack('i', pid_out)
+            ser.write(writevar)
+
+
+    """
     # Sending arduino data and then having the arduino send back same data
     # and printing the data from arduino that was originally sent from the pi
     while True:
@@ -31,7 +37,6 @@ if __name__ == '__main__':
         line = ser.readline().decode('utf-8').rstrip()
         print(line)
         time.sleep(1)
-
     """
 
             
