@@ -20,7 +20,7 @@ if __name__ == '__main__':
             print(type(pwm))
             str_pwm = str(pwm)
             print(type(str_pwm))
-            print("X PWM = {pwm)}")
+            print("X PWM = {pwm}")
             ser.write(b""+pwm+"\n")
         
     """
