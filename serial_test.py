@@ -17,7 +17,7 @@ if __name__ == '__main__':
             print("X Angle = {xangle}")
             pwm = xangle * 5
             print("X PWM = {pwm}")
-            ser.write(b""+ pwm"\n")
+            ser.write(b""+pwm+"\n")
     """
 
     # Sending arduino data and then having the arduino send back same data
