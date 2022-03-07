@@ -14,6 +14,7 @@ if __name__ == '__main__':
     while True:
         if ser.in_waiting > 0:
             xangle = ser.readline().decode("utf-8").rstrip()
+            print(type(xangle)
             print("X Angle = {xangle}")
             pwm = int(float(xangle))
             str_pwm = str(pwm)
