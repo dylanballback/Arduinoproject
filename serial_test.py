@@ -22,8 +22,8 @@ if __name__ == '__main__':
             test_line = ser.readline().decode("utf-8").rstrip()
             if test_line != xangle:
                 print(f"Recived PWM = {test_line}")
-                
-            pid_out = xangle*2
+
+            pid_out = pwm*2
             print(f"X PWM = {pid_out}")
             writevar = struct.pack('i', pid_out)
             ser.write(writevar)
