@@ -20,7 +20,7 @@ if __name__ == '__main__':
             pwm = int(float(xangle))
             str_pwm = str(pwm)
             print(f"X PWM = {pwm}")
-            writevar = struct.pack(i, pwm)
+            writevar = struct.pack('i', pwm)
             print(writevar)
             print(type(writevar))
             ser.write(writevar)
