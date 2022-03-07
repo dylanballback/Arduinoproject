@@ -15,14 +15,14 @@ if __name__ == '__main__':
         if ser.in_waiting > 0:
             xangle = ser.readline().decode("utf-8").rstrip()
             print(type(xangle))
-            """
-            
             print("X Angle = {xangle}")
             pwm = int(float(xangle))
+            print(type(pwm))
             str_pwm = str(pwm)
+            print(type(str_pwm))
             print("X PWM = {pwm)}")
             ser.write(b""+pwm+"\n")
-            """
+        
     """
 
     # Sending arduino data and then having the arduino send back same data
