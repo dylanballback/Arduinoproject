@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     while True:
         if ser.in_waiting > 0:
-            line = ser.readline().decode().rstrip()
+            line = ser.readline().decode("utf-8", "ignore").rstrip()
             print(line)
             time.sleep(1)
     """
