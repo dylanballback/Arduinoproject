@@ -15,7 +15,7 @@ if __name__ == '__main__':
         if ser.in_waiting > 0:
             xangle = ser.readline().decode("utf-8").rstrip()
             print("X Angle = {xangle}")
-            pwm = xangle * 5
+            pwm = xangle
             print("X PWM = {pwm}")
             ser.write(b""+pwm+"\n")
     """
