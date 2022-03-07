@@ -16,7 +16,8 @@ if __name__ == '__main__':
             xangle = ser.readline().decode("utf-8").rstrip()
             print("X Angle = {xangle}")
             pwm = int(float(xangle))
-            print("X PWM = {pwm}")
+            str_pwm = str(pwm)
+            print("X PWM = {pwm)}")
             ser.write(b""+pwm+"\n")
     """
 
