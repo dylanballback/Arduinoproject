@@ -15,14 +15,11 @@ if __name__ == '__main__':
     while True:
         if ser.in_waiting > 0:
             xangle = ser.readline().decode("utf-8").rstrip()
-            print(type(xangle))
             print(f"X Angle = {xangle}")
             pwm = int(float(xangle))
             str_pwm = str(pwm)
             print(f"X PWM = {pwm}")
             writevar = struct.pack('i', pwm)
-            print(writevar)
-            print(type(writevar))
             ser.write(writevar)
         
     """
