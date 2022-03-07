@@ -24,7 +24,7 @@ if __name__ == '__main__':
             writevar = f"{str_pwm}\n"
             print(writevar)
             print(type(writevar))
-            ser.write(b""+writevar)
+            ser.write(b+writevar)
         
     """
 
