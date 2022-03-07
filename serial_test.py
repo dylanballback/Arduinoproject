@@ -5,7 +5,7 @@ import serial
 import time
 
 if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyUSB0', 1152000, timeout=1)
+    ser = serial.Serial('/dev/ttyUSB0', 500000, timeout=1)
     ser.reset_input_buffer()
     
     
