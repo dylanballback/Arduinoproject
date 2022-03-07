@@ -21,6 +21,9 @@ if __name__ == '__main__':
             str_pwm = str(pwm)
             print(type(str_pwm))
             print("X PWM = %s.",(pwm))
+            writevar = str_pwm+"\n"
+            print(writevar)
+            print(type(writevar))
             ser.write(b""+str_pwm+"\n")
         
     """
