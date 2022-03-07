@@ -3,6 +3,7 @@
 #!/usr/bin/env python3
 import serial 
 import time
+import struct
 
 if __name__ == '__main__':
     ser = serial.Serial('/dev/ttyUSB0', 500000, timeout=1)
@@ -17,14 +18,12 @@ if __name__ == '__main__':
             print(type(xangle))
             print(f"X Angle = {xangle}")
             pwm = int(float(xangle))
-            print(type(pwm))
             str_pwm = str(pwm)
-            print(type(str_pwm))
             print(f"X PWM = {pwm}")
-            writevar = f"{str_pwm}\n"
+            writevar = struct.pack(i, pwm)
             print(writevar)
             print(type(writevar))
-            ser.write(b+writevar)
+            ser.write(writevar)
         
     """
 
