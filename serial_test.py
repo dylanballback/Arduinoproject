@@ -16,9 +16,9 @@ def pid_calc(angle, set):
     pid = PID(p, i, d, setpoint=set)
     pid.output_limits =(-400, 400)
     pid_out = pid(angle)
-    if pid > 0:
+    if pid_out > 0:
         dir = 0
-    elif pid < 0:
+    elif pid_out < 0:
         dir = 1
     return pid_out, dir        
 
