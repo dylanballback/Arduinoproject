@@ -36,7 +36,7 @@ if __name__ == '__main__':
             print(f"DIR = {pid_out[1]}")
 
 
-            writevar = struct.pack('i', pid_out[0], pid_out[1])
+            writevar = struct.pack('ii', pid_out[0], pid_out[1])
             ser.write(writevar)
 
 
