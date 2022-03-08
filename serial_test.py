@@ -28,7 +28,7 @@ if __name__ == '__main__':
             print(f"X Angle = {xangle}")
             xangle = float(xangle)
             pid_out = pid_calc(xangle, set_angle)
-            print(f"PWM = {pid_out}")
+            #print(f"PWM = {pid_out}")
             writevar = struct.pack('i', pid_out)
             ser.write(writevar)
 
