@@ -16,11 +16,7 @@ def pid_calc(angle, set):
     pid = PID(p, i, d, setpoint=set)
     pid.output_limits =(-400, 400)
     pid_out = int(pid(angle))
-    if pid_out > 0:
-        dir = 0
-    elif pid_out < 0:
-        dir = 1
-    return pid_out, dir        
+    return pid_out        
 
 if __name__ == '__main__':
     ser = serial.Serial('/dev/ttyUSB0', 500000, timeout=1)
@@ -32,11 +28,8 @@ if __name__ == '__main__':
             print(f"X Angle = {xangle}")
             xangle = float(xangle)
             pid_out = pid_calc(xangle, set_angle)
-            print(f"PWM = {pid_out[0]}")
-            print(f"DIR = {pid_out[1]}")
-
-
-            writevar = struct.pack('ii', pid_out[0], pid_out[1])
+            print(f"PWM = {pid_out}")
+            writevar = struct.pack('i', pid_out)
             ser.write(writevar)
 
 
