@@ -7,7 +7,7 @@ import struct
 from simple_pid import PID
 
 #Define PID Constands
-p = 1
+p = 10
 i = 0
 d = 0
 set_angle = 0
